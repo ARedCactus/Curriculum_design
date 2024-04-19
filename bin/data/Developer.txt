@@ -1,0 +1,38 @@
+## 基于Javaswing 导航演示程序
+一，项目介绍：
+从文件加载点坐标，和点与点之间的连接关系，建立地图网络
+计算最短路径，在地图上绘制结果
+
+## 二，环境配置：
+windows11 jdk-17.0.9
+
+## 三， 包结构
+
+nav_gui                #工作目录 
+    ├── data           #地图数据及配置文件
+    │   ├── map_dataa
+    │   └── Test
+    ├── bin            #存储编译后的二进制文件
+    │   └── *.class
+    ├── ios            #文件读取包
+    │   ├── Read_yaml.java
+    │   ├── ReadLine.java
+    │   └── ReadPoint.java
+    ├── navigation     #导航包
+    │   └── Nav.java
+    ├── frame          #GUI界面包
+    │   ├── CanvaListener.java
+    │   ├── Frame_init.java
+    │   ├── ItemListener.java
+    │   └── Shape_.java
+    ├── map_info       #地图基本数据结构
+    │   ├── DataIOS.java
+    │   ├── Line.java
+    │   ├── Point.java
+    │   └── Scaling.java
+    └── Main.java      #main函数实例化
+
+## 四， 开发人员及开发周期
+
+开发人员： 220742 李迪
+周期： 2024.4.11 ~ 2024.4.14
