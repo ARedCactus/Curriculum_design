@@ -3,7 +3,7 @@
 #include <Windows.h>
 #include <math.h>
 #include <stdio.h>
-#include <stdlib.h>                           //VS2022      easyx     Ëæ»úµØÍ¼  +ÓÎÏ·ÈËÎïÒÆ¶¯  +´æµµ
+#include <stdlib.h>                           //VS2022      easyx     éšæœºåœ°å›¾  +æ¸¸æˆäººç‰©ç§»åŠ¨  +å­˜æ¡£
 #include <conio.h>
 #include <iostream>
 #include <easyx.h>
@@ -33,112 +33,112 @@ void kx(int x, int y, int m, int n);
 #define WIDTH 1080
 #define HEIGHT 720
 
-#define BLOCK_XY 15	//Ð¡·½¸ñ±ß³¤
-#define BLOCK_JJ 1		//Ð¡·½¸ñÖ®¼äµÄ¼ä¾à
+#define BLOCK_XY 15	//å°æ–¹æ ¼è¾¹é•¿
+#define BLOCK_JJ 1		//å°æ–¹æ ¼ä¹‹é—´çš„é—´è·
 
-COLORREF TEXT_COLOR = COLORREF RGB(110, 110, 180);			    // ÃÅÑÕÉ«2
-COLORREF HERO_COLOR = COLORREF RGB(100, 150, 150);		     //heroÑÕÉ«
-COLORREF BIG_COLOR = COLORREF RGB(255, 0, 0);		         //BigÑÕÉ«
-COLORREF BIGX_COLOR = COLORREF RGB(255, 0, 0);		         //BigxÑÕÉ«
-COLORREF SMALL_COLOR = COLORREF RGB(100, 120, 120);          //smallÑÕÉ«
-COLORREF SMALLX_COLOR = COLORREF RGB(164, 114, 229);          //smallxÑÕÉ«
-COLORREF BK_COLOR = COLORREF RGB(150, 150, 150);			 //Î§Ç½ÑÕÉ«1
-COLORREF BK_COLOR2 = COLORREF RGB(80, 80, 80);			    //Î§Ç½ÑÕÉ«2
-COLORREF BK_COLOR3 = COLORREF RGB(38, 89, 229);			    // Î§Ç½ÑÕÉ«3 
-COLORREF BK_COLOR4 = COLORREF RGB(85, 226, 229);			    //Î§Ç½ÑÕÉ«4
-COLORREF BK_COLOR5 = COLORREF RGB(132, 138, 79);			    //Î§Ç½ÑÕÉ«5
-COLORREF BK_COLOR6 = COLORREF RGB(128, 85, 138);			    //Î§Ç½ÑÕÉ«6
-COLORREF DOOR_COLOR1 = COLORREF RGB(120, 120, 250);			    // ÃÅÑÕÉ«1 
-COLORREF DOOR_COLOR2 = COLORREF RGB(120, 250, 120);			    // ÃÅÑÕÉ«2
-COLORREF DOOR_COLOR3 = COLORREF RGB(150, 120, 120);            //ÃÅµÄÑÕÉ«3
-COLORREF WEN_COLOR = COLORREF RGB(0, 200, 0);			     // ½ø¶ÈÌõÑÕÉ«
-COLORREF BLOOD_COLOR = COLORREF RGB(200, 250, 200);           //bloodµÄÑÕÉ«
-COLORREF BLOODX_COLOR = COLORREF RGB(200, 250, 200);           //bloodxµÄÑÕÉ«
-COLORREF KEY_COLOR = COLORREF RGB(100, 100, 200);             //keyµÄÑÕÉ«
-COLORREF STAIR_COLOR = COLORREF RGB(100, 200, 200);           //ÌÝ×ÓÑÕÉ«1
-COLORREF STAIR_COLOR2 = COLORREF RGB(203, 217, 229);           //ÌÝ×ÓÑÕÉ«2
-COLORREF jp_COLOR1 = COLORREF RGB(92, 92, 92);           //¼üÅÌÑÕÉ«1
-COLORREF jp_COLOR2 = COLORREF RGB(66, 66, 66);           //¼üÅÌÑÕÉ«2
+COLORREF TEXT_COLOR = COLORREF RGB(110, 110, 180);			    // é—¨é¢œè‰²2
+COLORREF HERO_COLOR = COLORREF RGB(100, 150, 150);		     //heroé¢œè‰²
+COLORREF BIG_COLOR = COLORREF RGB(255, 0, 0);		         //Bigé¢œè‰²
+COLORREF BIGX_COLOR = COLORREF RGB(255, 0, 0);		         //Bigxé¢œè‰²
+COLORREF SMALL_COLOR = COLORREF RGB(100, 120, 120);          //smallé¢œè‰²
+COLORREF SMALLX_COLOR = COLORREF RGB(164, 114, 229);          //smallxé¢œè‰²
+COLORREF BK_COLOR = COLORREF RGB(150, 150, 150);			 //å›´å¢™é¢œè‰²1
+COLORREF BK_COLOR2 = COLORREF RGB(80, 80, 80);			    //å›´å¢™é¢œè‰²2
+COLORREF BK_COLOR3 = COLORREF RGB(38, 89, 229);			    // å›´å¢™é¢œè‰²3 
+COLORREF BK_COLOR4 = COLORREF RGB(85, 226, 229);			    //å›´å¢™é¢œè‰²4
+COLORREF BK_COLOR5 = COLORREF RGB(132, 138, 79);			    //å›´å¢™é¢œè‰²5
+COLORREF BK_COLOR6 = COLORREF RGB(128, 85, 138);			    //å›´å¢™é¢œè‰²6
+COLORREF DOOR_COLOR1 = COLORREF RGB(120, 120, 250);			    // é—¨é¢œè‰²1 
+COLORREF DOOR_COLOR2 = COLORREF RGB(120, 250, 120);			    // é—¨é¢œè‰²2
+COLORREF DOOR_COLOR3 = COLORREF RGB(150, 120, 120);            //é—¨çš„é¢œè‰²3
+COLORREF WEN_COLOR = COLORREF RGB(0, 200, 0);			     // è¿›åº¦æ¡é¢œè‰²
+COLORREF BLOOD_COLOR = COLORREF RGB(200, 250, 200);           //bloodçš„é¢œè‰²
+COLORREF BLOODX_COLOR = COLORREF RGB(200, 250, 200);           //bloodxçš„é¢œè‰²
+COLORREF KEY_COLOR = COLORREF RGB(100, 100, 200);             //keyçš„é¢œè‰²
+COLORREF STAIR_COLOR = COLORREF RGB(100, 200, 200);           //æ¢¯å­é¢œè‰²1
+COLORREF STAIR_COLOR2 = COLORREF RGB(203, 217, 229);           //æ¢¯å­é¢œè‰²2
+COLORREF jp_COLOR1 = COLORREF RGB(92, 92, 92);           //é”®ç›˜é¢œè‰²1
+COLORREF jp_COLOR2 = COLORREF RGB(66, 66, 66);           //é”®ç›˜é¢œè‰²2
 
 
-#define GAMETIME 150			//ÓÎÏ·ËÙ¶È
-#define LIZINUM 200	             //Á£×ÓÊýÁ¿
-#define DOORLIZINUM 20           //ÃÅ´ò¿ªÊ±Á£×Ó»¯µÄÁ£×ÓÊýÁ¿
-#define BIGNUM 20               //Í»Ï®¹ÖÎïÊýÁ¿
-#define BIGNUMX 20               //Í»Ï®¹ÖÎïxÊýÁ¿
-#define SMALLNUM 22               //ÆÕÍ¨¹ÖÎïÊýÁ¿
-#define SMALLNUMX 30               //ÆÕÍ¨¹ÖÎïxÊýÁ¿
-#define BLOODNUM 10              //»ØÑªµãÊýÁ¿
-#define BLOODNUMX 10              //»ØÑªµãxÊýÁ¿
-#define KEYNUM 10                //Ô¿³×ÊýÁ¿
-#define STARNUM 500              //ÐÇÊýÁ¿
-int CAMERA_X = 0;				//Ïà»úx×ø±ê,0ÎªÆÁÄ»ÖÐ¼ä
-int CAMERA_Y = 0;				//Ïà»úy×ø±ê,0ÎªÆÁÄ»ÖÐ¼ä
-#define SHAKE 30				//¶¶¶¯Ð§¹ûµÄÖ¡Êý
-int WINDOW_SHAKE = 0;			//¼ÇÂ¼¶¶¶¯ÁË¶àÉÙ´Î
+#define GAMETIME 150			//æ¸¸æˆé€Ÿåº¦
+#define LIZINUM 200	             //ç²’å­æ•°é‡
+#define DOORLIZINUM 20           //é—¨æ‰“å¼€æ—¶ç²’å­åŒ–çš„ç²’å­æ•°é‡
+#define BIGNUM 20               //çªè¢­æ€ªç‰©æ•°é‡
+#define BIGNUMX 20               //çªè¢­æ€ªç‰©xæ•°é‡
+#define SMALLNUM 22               //æ™®é€šæ€ªç‰©æ•°é‡
+#define SMALLNUMX 30               //æ™®é€šæ€ªç‰©xæ•°é‡
+#define BLOODNUM 10              //å›žè¡€ç‚¹æ•°é‡
+#define BLOODNUMX 10              //å›žè¡€ç‚¹xæ•°é‡
+#define KEYNUM 10                //é’¥åŒ™æ•°é‡
+#define STARNUM 500              //æ˜Ÿæ•°é‡
+int CAMERA_X = 0;				//ç›¸æœºxåæ ‡,0ä¸ºå±å¹•ä¸­é—´
+int CAMERA_Y = 0;				//ç›¸æœºyåæ ‡,0ä¸ºå±å¹•ä¸­é—´
+#define SHAKE 30				//æŠ–åŠ¨æ•ˆæžœçš„å¸§æ•°
+int WINDOW_SHAKE = 0;			//è®°å½•æŠ–åŠ¨äº†å¤šå°‘æ¬¡
 
-const int P_WIDTH = WIDTH + 417;     //ÆÁÄ»¿í¶È width
-const int P_HEIGHT = HEIGHT;     //ÆÁÄ»¸ß¶È height
-const int WEN_DISTANT = 40;       //ÐÅÏ¢½çÃæÉÏÏÂÎÄ×Ö¼ä¾àÀë
-const int WEN_LR = 150;       //ÐÅÏ¢½çÃæ×óÓÒÎÄ×Ö¼ä¾àÀë
-const int WEN_P = 2;           //ÐÅÏ¢½çÃæ½ø¶ÈÌõ±ß¿ò¿í¶È
-const int BLOCK_WIDTH = WIDTH / (BLOCK_XY + BLOCK_JJ);	 //Ð¡·½¸ñxÖáÊýÁ¿
-const int BLOCK_HEIGHT = HEIGHT / (BLOCK_XY + BLOCK_JJ); //Ð¡·½¸ñyÖáÊýÁ¿
+const int P_WIDTH = WIDTH + 417;     //å±å¹•å®½åº¦ width
+const int P_HEIGHT = HEIGHT;     //å±å¹•é«˜åº¦ height
+const int WEN_DISTANT = 40;       //ä¿¡æ¯ç•Œé¢ä¸Šä¸‹æ–‡å­—é—´è·ç¦»
+const int WEN_LR = 150;       //ä¿¡æ¯ç•Œé¢å·¦å³æ–‡å­—é—´è·ç¦»
+const int WEN_P = 2;           //ä¿¡æ¯ç•Œé¢è¿›åº¦æ¡è¾¹æ¡†å®½åº¦
+const int BLOCK_WIDTH = WIDTH / (BLOCK_XY + BLOCK_JJ);	 //å°æ–¹æ ¼xè½´æ•°é‡
+const int BLOCK_HEIGHT = HEIGHT / (BLOCK_XY + BLOCK_JJ); //å°æ–¹æ ¼yè½´æ•°é‡
 
-const int PYI_X = WIDTH - BLOCK_WIDTH * (BLOCK_XY + BLOCK_JJ);  //xÖáÉÏµÄÆ«ÒÆÁ¿£¬ÒòÎª·Ö±æÂÊºÍ·½¸ñ¾­³£²»ÄÜÕû³ý
-const int PYI_Y = HEIGHT - BLOCK_HEIGHT * (BLOCK_XY + BLOCK_JJ);//yÖáÉÏµÄÆ«ÒÆÁ¿£¬ÒòÎª·Ö±æÂÊºÍ·½¸ñ¾­³£²»ÄÜÕû³ý
+const int PYI_X = WIDTH - BLOCK_WIDTH * (BLOCK_XY + BLOCK_JJ);  //xè½´ä¸Šçš„åç§»é‡ï¼Œå› ä¸ºåˆ†è¾¨çŽ‡å’Œæ–¹æ ¼ç»å¸¸ä¸èƒ½æ•´é™¤
+const int PYI_Y = HEIGHT - BLOCK_HEIGHT * (BLOCK_XY + BLOCK_JJ);//yè½´ä¸Šçš„åç§»é‡ï¼Œå› ä¸ºåˆ†è¾¨çŽ‡å’Œæ–¹æ ¼ç»å¸¸ä¸èƒ½æ•´é™¤
 const int py_x = PYI_X / 2;
 const int py_y = PYI_Y / 2;
 
-const float G = 0;			        //ÖØÁ¦
-const float MC = 0.9999f;		    //Ä¦²ÁÁ¦
+const float G = 0;			        //é‡åŠ›
+const float MC = 0.9999f;		    //æ‘©æ“¦åŠ›
 float jd = 0;
-const int dooropening = 100;         //ÃÅ¿ªÆôËÙ¶È   dooropening/100  Ãë
+const int dooropening = 100;         //é—¨å¼€å¯é€Ÿåº¦   dooropening/100  ç§’
 
-// ´°¿Ú¿í¸ß
+// çª—å£å®½é«˜
 int px = 1497;
 int py = 720;
 
-int font_h = 200;					// ÎÄ×Ö¸ß
-int font_w = 20;					// ÎÄ×Ö¿í
+int font_h = 200;					// æ–‡å­—é«˜
+int font_w = 20;					// æ–‡å­—å®½
 
-int K[WIDTH][HEIGHT] = { 0 };               //±ê¼ÇÎïÌå×ø±êµÄ¶þÎ¬Êý×é     0´ú±í¿Õ   1´ú±íÇ½    2´ú±íÃÅ   3´ú±ísmall   4´ú±í»ØÑªµã  5´ú±íkey  6´ú±íÂ¥ÌÝ
-int K1[WIDTH][HEIGHT] = { 0 };               //±ê¼ÇÎïÌå×ø±êµÄ¶þÎ¬Êý×é     0´ú±í¿Õ   1´ú±íÇ½    2´ú±íÃÅ   3´ú±ísmall   4´ú±í»ØÑªµã  5´ú±íkey  6´ú±íÂ¥ÌÝ
-int K2[WIDTH][HEIGHT] = { 0 };                //´ËÊ±x=3  
+int K[WIDTH][HEIGHT] = { 0 };               //æ ‡è®°ç‰©ä½“åæ ‡çš„äºŒç»´æ•°ç»„     0ä»£è¡¨ç©º   1ä»£è¡¨å¢™    2ä»£è¡¨é—¨   3ä»£è¡¨small   4ä»£è¡¨å›žè¡€ç‚¹  5ä»£è¡¨key  6ä»£è¡¨æ¥¼æ¢¯
+int K1[WIDTH][HEIGHT] = { 0 };               //æ ‡è®°ç‰©ä½“åæ ‡çš„äºŒç»´æ•°ç»„     0ä»£è¡¨ç©º   1ä»£è¡¨å¢™    2ä»£è¡¨é—¨   3ä»£è¡¨small   4ä»£è¡¨å›žè¡€ç‚¹  5ä»£è¡¨key  6ä»£è¡¨æ¥¼æ¢¯
+int K2[WIDTH][HEIGHT] = { 0 };                //æ­¤æ—¶x=3  
 
 wchar_t pszText[] =
-L"You are dead£¡£¡£¡\n"
-L"¡¶´º½­»¨ÔÂÒ¹¡·\n"
-L"´º½­³±Ë®Á¬º£Æ½£¬º£ÉÏÃ÷ÔÂ¹²³±Éú¡£\n"
-L"äÙäÙËæ²¨Ç§ÍòÀï£¬ºÎ´¦´º½­ÎÞÔÂÃ÷¡£\n"
-L"½­Á÷Íð×ªÈÆ·¼µé£¬ÔÂÕÕ»¨ÁÖ½ÔËÆö±¡£\n"
-L"¿ÕÀïÁ÷Ëª²»¾õ·É£¬Í¡ÉÏ°×É³¿´²»¼û¡£\n"
-L"½­ÌìÒ»É«ÎÞÏË³¾£¬ð¨ð¨¿ÕÖÐ¹ÂÔÂÂÖ¡£\n"
-L"½­ÅÏºÎÈË³õ¼ûÔÂ£¿½­ÔÂºÎÄê³õÕÕÈË£¿\n"
-L"ÈËÉú´ú´úÎÞÇîÒÑ£¬½­ÔÂÄêÄêÖ»ÏàËÆ¡£\n"
-L"²»Öª½­ÔÂ´ýºÎÈË£¬µ«¼û³¤½­ËÍÁ÷Ë®¡£\n"
-L"°×ÔÆÒ»Æ¬È¥ÓÆÓÆ£¬Çà·ãÆÖÉÏ²»Ê¤³î¡£\n"
-L"Ë­¼Ò½ñÒ¹±âÖÛ×Ó£¬ºÎ´¦ÏàË¼Ã÷ÔÂÂ¥£¿\n"
-L"¿ÉÁ¯Â¥ÉÏÔÂÅÇ»²£¬Ó¦ÕÕÀëÈË×±¾µÌ¨¡£\n"
-L"Óñ»§Á±ÖÐ¾í²»È¥£¬µ·ÒÂÕèÉÏ·÷»¹À´¡£\n"
-L"´ËÊ±ÏàÍû²»ÏàÎÅ£¬Ô¸ÖðÔÂ»ªÁ÷ÕÕ¾ý¡£\n"
-L"ºèÑã³¤·É¹â²»¶È£¬ÓãÁúÇ±Ô¾Ë®³ÉÎÄ¡£\n"
-L"×òÒ¹ÏÐÌ¶ÃÎÂä»¨£¬¿ÉÁ¯´º°ë²»»¹¼Ò¡£\n"
-L"½­Ë®Á÷´ºÈ¥Óû¾¡£¬½­Ì¶ÂäÔÂ¸´Î÷Ð±¡£\n"
-L"Ð±ÔÂ³Á³Á²Øº£Îí£¬íÙÊ¯äìÏæÎÞÏÞÂ·¡£\n"
-L"²»Öª³ËÔÂ¼¸ÈË¹é£¬ÂäÔÂÒ¡ÇéÂú½­Ê÷¡£\n"
-L"game made by ÀîµÏ\n";
+L"You are deadï¼ï¼ï¼\n"
+L"ã€Šæ˜¥æ±ŸèŠ±æœˆå¤œã€‹\n"
+L"æ˜¥æ±Ÿæ½®æ°´è¿žæµ·å¹³ï¼Œæµ·ä¸Šæ˜Žæœˆå…±æ½®ç”Ÿã€‚\n"
+L"æ»Ÿæ»Ÿéšæ³¢åƒä¸‡é‡Œï¼Œä½•å¤„æ˜¥æ±Ÿæ— æœˆæ˜Žã€‚\n"
+L"æ±Ÿæµå®›è½¬ç»•èŠ³ç”¸ï¼Œæœˆç…§èŠ±æž—çš†ä¼¼éœ°ã€‚\n"
+L"ç©ºé‡Œæµéœœä¸è§‰é£žï¼Œæ±€ä¸Šç™½æ²™çœ‹ä¸è§ã€‚\n"
+L"æ±Ÿå¤©ä¸€è‰²æ— çº¤å°˜ï¼ŒçšŽçšŽç©ºä¸­å­¤æœˆè½®ã€‚\n"
+L"æ±Ÿç•”ä½•äººåˆè§æœˆï¼Ÿæ±Ÿæœˆä½•å¹´åˆç…§äººï¼Ÿ\n"
+L"äººç”Ÿä»£ä»£æ— ç©·å·²ï¼Œæ±Ÿæœˆå¹´å¹´åªç›¸ä¼¼ã€‚\n"
+L"ä¸çŸ¥æ±Ÿæœˆå¾…ä½•äººï¼Œä½†è§é•¿æ±Ÿé€æµæ°´ã€‚\n"
+L"ç™½äº‘ä¸€ç‰‡åŽ»æ‚ æ‚ ï¼Œé’æž«æµ¦ä¸Šä¸èƒœæ„ã€‚\n"
+L"è°å®¶ä»Šå¤œæ‰èˆŸå­ï¼Œä½•å¤„ç›¸æ€æ˜Žæœˆæ¥¼ï¼Ÿ\n"
+L"å¯æ€œæ¥¼ä¸Šæœˆå¾˜å¾Šï¼Œåº”ç…§ç¦»äººå¦†é•œå°ã€‚\n"
+L"çŽ‰æˆ·å¸˜ä¸­å·ä¸åŽ»ï¼Œæ£è¡£ç §ä¸Šæ‹‚è¿˜æ¥ã€‚\n"
+L"æ­¤æ—¶ç›¸æœ›ä¸ç›¸é—»ï¼Œæ„¿é€æœˆåŽæµç…§å›ã€‚\n"
+L"é¸¿é›é•¿é£žå…‰ä¸åº¦ï¼Œé±¼é¾™æ½œè·ƒæ°´æˆæ–‡ã€‚\n"
+L"æ˜¨å¤œé—²æ½­æ¢¦è½èŠ±ï¼Œå¯æ€œæ˜¥åŠä¸è¿˜å®¶ã€‚\n"
+L"æ±Ÿæ°´æµæ˜¥åŽ»æ¬²å°½ï¼Œæ±Ÿæ½­è½æœˆå¤è¥¿æ–œã€‚\n"
+L"æ–œæœˆæ²‰æ²‰è—æµ·é›¾ï¼Œç¢£çŸ³æ½‡æ¹˜æ— é™è·¯ã€‚\n"
+L"ä¸çŸ¥ä¹˜æœˆå‡ äººå½’ï¼Œè½æœˆæ‘‡æƒ…æ»¡æ±Ÿæ ‘ã€‚\n"
+L"game made by æŽè¿ª\n";
 
-struct Big {                             //bigµÄ½á¹¹Ìå
-	int x = 0, y = 0;                              //big³öÏÖµÄ¶þÎ¬×ø±ê
-	int dx = -1, dy = 0;                      //bigÒÆ¶¯µÄÄ¬ÈÏxy·½Ïò
-	int s = 1;                             //bigµÄ´æÔÚ×´Ì¬     1´ú±í»î×Å  2´ú±íËÀÍö
+struct Big {                             //bigçš„ç»“æž„ä½“
+	int x = 0, y = 0;                              //bigå‡ºçŽ°çš„äºŒç»´åæ ‡
+	int dx = -1, dy = 0;                      //bigç§»åŠ¨çš„é»˜è®¤xyæ–¹å‘
+	int s = 1;                             //bigçš„å­˜åœ¨çŠ¶æ€     1ä»£è¡¨æ´»ç€  2ä»£è¡¨æ­»äº¡
 }BIG[BIGNUM];
 
-struct Bigx {                             //bigµÄ½á¹¹Ìå
-	int x = 0, y = 0;                              //big³öÏÖµÄ¶þÎ¬×ø±ê
-	int dx = -1, dy = 0;                      //bigÒÆ¶¯µÄÄ¬ÈÏxy·½Ïò
-	int s = 1;                             //bigµÄ´æÔÚ×´Ì¬     1´ú±í»î×Å  2´ú±íËÀÍö
+struct Bigx {                             //bigçš„ç»“æž„ä½“
+	int x = 0, y = 0;                              //bigå‡ºçŽ°çš„äºŒç»´åæ ‡
+	int dx = -1, dy = 0;                      //bigç§»åŠ¨çš„é»˜è®¤xyæ–¹å‘
+	int s = 1;                             //bigçš„å­˜åœ¨çŠ¶æ€     1ä»£è¡¨æ´»ç€  2ä»£è¡¨æ­»äº¡
 }BIGX[BIGNUMX];
 
 void bigtest() {
@@ -310,48 +310,48 @@ void herotest() {
 }
 
 
-int Xtox(int x) {                                                                  //x´ó×ø±ê×ªÐ¡×ø±ê
+int Xtox(int x) {                                                                  //xå¤§åæ ‡è½¬å°åæ ‡
 	return(x * BLOCK_XY + x * BLOCK_JJ + py_x + CAMERA_X + BLOCK_XY / 2);
 }
-int Ytoy(int y) {                                                                  //y´ó×ø±ê×ªÐ¡×ø±ê
+int Ytoy(int y) {                                                                  //yå¤§åæ ‡è½¬å°åæ ‡
 	return(y * BLOCK_XY + y * BLOCK_JJ + py_y + CAMERA_Y + BLOCK_XY / 2);
 }
-int maptox(int map) {                                                              //mapÊý×é×ªx×ø±ê
+int maptox(int map) {                                                              //mapæ•°ç»„è½¬xåæ ‡
 	return (map % BLOCK_WIDTH);
 }
-int maptoy(int map) {                                                              //mapÊý×é×ªy×ø±ê
+int maptoy(int map) {                                                              //mapæ•°ç»„è½¬yåæ ‡
 	return (map / BLOCK_WIDTH);
 }
-int xytomap(int x, int y) {                                                         //xy×ø±ê×ªmap
+int xytomap(int x, int y) {                                                         //xyåæ ‡è½¬map
 	return (y * BLOCK_WIDTH + x);
 }
 
-void k(int x, int y, int m, int n) {                      //½«Ã¿¸öÇ½µÄ´ó×ø±êÂ¼ÈëÊý×é
-	int* p;                                       //mÓÃÀ´Çø·ÖÊÇÃÅ»¹ÊÇÇ½ m=1Ê± ´ú±íÃÅ £»m=0Ê± ´ú±íÇ½
-	p = &K[x][y];                                 //nÓÃÀ´ÖØÖÃ¶þÎ¬Êý×é Ê¹K¡¾¡¿¡¾¡¿¹é0 Ä¬ÈÏn=0£»n=1Ê±ÖØÖÃ
+void k(int x, int y, int m, int n) {                      //å°†æ¯ä¸ªå¢™çš„å¤§åæ ‡å½•å…¥æ•°ç»„
+	int* p;                                       //mç”¨æ¥åŒºåˆ†æ˜¯é—¨è¿˜æ˜¯å¢™ m=1æ—¶ ä»£è¡¨é—¨ ï¼›m=0æ—¶ ä»£è¡¨å¢™
+	p = &K[x][y];                                 //nç”¨æ¥é‡ç½®äºŒç»´æ•°ç»„ ä½¿Kã€ã€‘ã€ã€‘å½’0 é»˜è®¤n=0ï¼›n=1æ—¶é‡ç½®
 	if (n == 0) {
 		*p = 1 + m;
 	}
 	else *p = 0;
 }
-void kx(int x, int y, int m, int n) {                      //½«Ã¿¸öÇ½µÄ´ó×ø±êÂ¼ÈëÊý×é
-	int* p;                                       //mÓÃÀ´Çø·ÖÊÇÃÅ»¹ÊÇÇ½ m=1Ê± ´ú±íÃÅ £»m=0Ê± ´ú±íÇ½
-	p = &K1[x][y];                                 //nÓÃÀ´ÖØÖÃ¶þÎ¬Êý×é Ê¹K¡¾¡¿¡¾¡¿¹é0 Ä¬ÈÏn=0£»n=1Ê±ÖØÖÃ
+void kx(int x, int y, int m, int n) {                      //å°†æ¯ä¸ªå¢™çš„å¤§åæ ‡å½•å…¥æ•°ç»„
+	int* p;                                       //mç”¨æ¥åŒºåˆ†æ˜¯é—¨è¿˜æ˜¯å¢™ m=1æ—¶ ä»£è¡¨é—¨ ï¼›m=0æ—¶ ä»£è¡¨å¢™
+	p = &K1[x][y];                                 //nç”¨æ¥é‡ç½®äºŒç»´æ•°ç»„ ä½¿Kã€ã€‘ã€ã€‘å½’0 é»˜è®¤n=0ï¼›n=1æ—¶é‡ç½®
 	if (n == 0) {
 		*p = 1 + m;
 	}
 	else *p = 0;
 }
-void kx1(int x, int y, int m, int n) {                      //½«Ã¿¸öÇ½µÄ´ó×ø±êÂ¼ÈëÊý×é
-	int* p;                                       //mÓÃÀ´Çø·ÖÊÇÃÅ»¹ÊÇÇ½ m=1Ê± ´ú±íÃÅ £»m=0Ê± ´ú±íÇ½
-	p = &K2[x][y];                                 //nÓÃÀ´ÖØÖÃ¶þÎ¬Êý×é Ê¹K¡¾¡¿¡¾¡¿¹é0 Ä¬ÈÏn=0£»n=1Ê±ÖØÖÃ
+void kx1(int x, int y, int m, int n) {                      //å°†æ¯ä¸ªå¢™çš„å¤§åæ ‡å½•å…¥æ•°ç»„
+	int* p;                                       //mç”¨æ¥åŒºåˆ†æ˜¯é—¨è¿˜æ˜¯å¢™ m=1æ—¶ ä»£è¡¨é—¨ ï¼›m=0æ—¶ ä»£è¡¨å¢™
+	p = &K2[x][y];                                 //nç”¨æ¥é‡ç½®äºŒç»´æ•°ç»„ ä½¿Kã€ã€‘ã€ã€‘å½’0 é»˜è®¤n=0ï¼›n=1æ—¶é‡ç½®
 	if (n == 0) {
 		*p = 1 + m;
 	}
 	else *p = 0;
 }
 ///////////////////////////////////////////////////////////
-void gamewindowshake() {                              //»­ÃæÕð¶¯
+void gamewindowshake() {                              //ç”»é¢éœ‡åŠ¨
 	if (WINDOW_SHAKE < SHAKE) {
 		int x = rand() % 30 - 15;
 		int y = rand() % 30 - 15;
@@ -365,7 +365,7 @@ void gamewindowshake() {                              //»­ÃæÕð¶¯
 	}
 }
 /// //////////////////////////////////////////////////////////////////////////
-void drawbk() {                                          //´òÓ¡±ß½ç
+void drawbk() {                                          //æ‰“å°è¾¹ç•Œ
 	setfillcolor(BK_COLOR);
 	setlinecolor(BK_COLOR);
 	fillrectangle(0, 0, PYI_X / 2 + CAMERA_X, HEIGHT + CAMERA_Y);
@@ -374,7 +374,7 @@ void drawbk() {                                          //´òÓ¡±ß½ç
 	fillrectangle(0 + CAMERA_X, HEIGHT + CAMERA_Y, WIDTH + CAMERA_X, (HEIGHT - PYI_Y / 2) + CAMERA_Y);
 }
 //////////////////////////////////////////////////////////////////////////////////////////////
-void gamepause() {                                //ÓÎÏ·ÔÝÍ£
+void gamepause() {                                //æ¸¸æˆæš‚åœ
 	settextcolor(WHITE);
 	setbkmode(TRANSPARENT);
 	settextstyle(90, 50, _T("Consolas"));
@@ -384,47 +384,47 @@ void gamepause() {                                //ÓÎÏ·ÔÝÍ£
 	drawroundrect(WIDTH + 8, 20, 60, 35, 3, 10, jp_COLOR1, jp_COLOR2);               //Esc
 	RECT a1 = { WIDTH + 15,20,WIDTH + 60,60 };
 	drawtext(_T("Esc"), &a1, DT_TOP | DT_VCENTER | DT_SINGLELINE);
-	drawroundrect(WIDTH + 260, 30, 40, 40, 3, 10, jp_COLOR1, jp_COLOR2);             //ÉÏ
+	drawroundrect(WIDTH + 260, 30, 40, 40, 3, 10, jp_COLOR1, jp_COLOR2);             //ä¸Š
 	RECT a3 = { WIDTH + 272,30,WIDTH + 300,70 };
 	drawtext(_T("W"), &a3, DT_TOP | DT_VCENTER | DT_SINGLELINE);
-	drawroundrect(WIDTH + 260, 80, 40, 40, 3, 10, jp_COLOR1, jp_COLOR2);             //ÏÂ
+	drawroundrect(WIDTH + 260, 80, 40, 40, 3, 10, jp_COLOR1, jp_COLOR2);             //ä¸‹
 	RECT a4 = { WIDTH + 272,80,WIDTH + 300,120 };
 	drawtext(_T("S"), &a4, DT_TOP | DT_VCENTER | DT_SINGLELINE);
-	drawroundrect(WIDTH + 210, 80, 40, 40, 3, 10, jp_COLOR1, jp_COLOR2);             //×ó
+	drawroundrect(WIDTH + 210, 80, 40, 40, 3, 10, jp_COLOR1, jp_COLOR2);             //å·¦
 	RECT a5 = { WIDTH + 222,80,WIDTH + 250,120 };
 	drawtext(_T("A"), &a5, DT_TOP | DT_VCENTER | DT_SINGLELINE);
-	drawroundrect(WIDTH + 310, 80, 40, 40, 3, 10, jp_COLOR1, jp_COLOR2);             //ÓÒ
+	drawroundrect(WIDTH + 310, 80, 40, 40, 3, 10, jp_COLOR1, jp_COLOR2);             //å³
 	RECT a6 = { WIDTH + 322,80,WIDTH + 350,120 };
 	drawtext(_T("D"), &a6, DT_TOP | DT_VCENTER | DT_SINGLELINE);
-	drawroundrect(WIDTH + 10, 150, 200, 30, 3, 10, jp_COLOR1, jp_COLOR2);             //¿Õ¸ñ
-	drawroundrect(WIDTH + 90, 20, 40, 40, 3, 10, jp_COLOR1, jp_COLOR2);             //´æµµB
+	drawroundrect(WIDTH + 10, 150, 200, 30, 3, 10, jp_COLOR1, jp_COLOR2);             //ç©ºæ ¼
+	drawroundrect(WIDTH + 90, 20, 40, 40, 3, 10, jp_COLOR1, jp_COLOR2);             //å­˜æ¡£B
 	RECT a2 = { WIDTH + 100,20,WIDTH + 160,60 };
 	drawtext(_T("B"), &a2, DT_TOP | DT_VCENTER | DT_SINGLELINE);
 
 	RECT a9 = { WIDTH ,100,P_WIDTH - 10 ,130 };
-	drawtext(_T("Esc´æµµ B¶Áµµ"), &a9, DT_TOP | DT_VCENTER | DT_SINGLELINE);
+	drawtext(_T("Escå­˜æ¡£ Bè¯»æ¡£"), &a9, DT_TOP | DT_VCENTER | DT_SINGLELINE);
 
 	RECT a7 = { WIDTH + 10,180,P_WIDTH ,210 };
-	drawtext(_T("WSAD ÉÏÏÂ×óÓÒ¿ØÖÆÒÆ¶¯"), &a7, DT_TOP | DT_VCENTER | DT_SINGLELINE);
+	drawtext(_T("WSAD ä¸Šä¸‹å·¦å³æŽ§åˆ¶ç§»åŠ¨"), &a7, DT_TOP | DT_VCENTER | DT_SINGLELINE);
 	RECT a8 = { WIDTH + 10,210,P_WIDTH ,240 };
-	drawtext(_T("¿Õ¸ñ ÔÝÍ£"), &a8, DT_TOP | DT_VCENTER | DT_SINGLELINE);
+	drawtext(_T("ç©ºæ ¼ æš‚åœ"), &a8, DT_TOP | DT_VCENTER | DT_SINGLELINE);
 	RECT a10 = { WIDTH + 10,240,P_WIDTH ,270 };
-	drawtext(_T("ÏÈ¿Õ¸ñÔÝÍ£ ²ÅÄÜ´æ¶Áµµ"), &a10, DT_TOP | DT_VCENTER | DT_SINGLELINE);
+	drawtext(_T("å…ˆç©ºæ ¼æš‚åœ æ‰èƒ½å­˜è¯»æ¡£"), &a10, DT_TOP | DT_VCENTER | DT_SINGLELINE);
 
 	settextcolor(BK_COLOR4);
 
 	RECT a11 = { WIDTH + 40,280,P_WIDTH ,310 };
-	drawtext(_T("Í»Ï®¹Ö ÉËº¦50"), &a11, DT_TOP | DT_VCENTER | DT_SINGLELINE);
+	drawtext(_T("çªè¢­æ€ª ä¼¤å®³50"), &a11, DT_TOP | DT_VCENTER | DT_SINGLELINE);
 	RECT a12 = { WIDTH + 40,310,P_WIDTH ,350 };
-	drawtext(_T("Ð¡¹Ö ÉËº¦10"), &a12, DT_TOP | DT_VCENTER | DT_SINGLELINE);
+	drawtext(_T("å°æ€ª ä¼¤å®³10"), &a12, DT_TOP | DT_VCENTER | DT_SINGLELINE);
 	RECT a13 = { WIDTH + 40,315,P_WIDTH ,405 };
-	drawtext(_T("Ô¿³× ¿ªÃÅºó key-1"), &a13, DT_TOP | DT_VCENTER | DT_SINGLELINE);
+	drawtext(_T("é’¥åŒ™ å¼€é—¨åŽ key-1"), &a13, DT_TOP | DT_VCENTER | DT_SINGLELINE);
 	RECT a14 = { WIDTH + 40,340,P_WIDTH ,440 };
-	drawtext(_T("Ê÷Ò¶ ÉúÃü»Ö¸´ HP+50"), &a14, DT_TOP | DT_VCENTER | DT_SINGLELINE);
+	drawtext(_T("æ ‘å¶ ç”Ÿå‘½æ¢å¤ HP+50"), &a14, DT_TOP | DT_VCENTER | DT_SINGLELINE);
 	RECT a15 = { WIDTH + 40,382,P_WIDTH ,462 };
-	drawtext(_T("Â¥ÌÝ Ç°ÍùÆäËûÂ¥²ã"), &a15, DT_TOP | DT_VCENTER | DT_SINGLELINE);
+	drawtext(_T("æ¥¼æ¢¯ å‰å¾€å…¶ä»–æ¥¼å±‚"), &a15, DT_TOP | DT_VCENTER | DT_SINGLELINE);
 	RECT a16 = { WIDTH + 40,414,P_WIDTH ,497 };
-	drawtext(_T("<--¼Ç×¡ ÕâÊÇÄã"), &a16, DT_TOP | DT_VCENTER | DT_SINGLELINE);
+	drawtext(_T("<--è®°ä½ è¿™æ˜¯ä½ "), &a16, DT_TOP | DT_VCENTER | DT_SINGLELINE);
 	RECT a17 = { WIDTH + 40,500,P_WIDTH ,550 };
 	drawpixal(68, 18, BIG_COLOR, 0, 1);
 	drawcircle(68, 20, SMALL_COLOR, 0, 1);
@@ -433,7 +433,7 @@ void gamepause() {                                //ÓÎÏ·ÔÝÍ£
 	buildstair(68, 26, STAIR_COLOR, 3);
 	drawpixal(68, 28, HERO_COLOR, 0, 1);
 
-	FlushBatchDraw();			//½«»º³åÊä³öµ½ÆÁÄ»
+	FlushBatchDraw();			//å°†ç¼“å†²è¾“å‡ºåˆ°å±å¹•
 	while (1) {
 		if (_kbhit()) {
 			char ch = _getch();
@@ -442,11 +442,11 @@ void gamepause() {                                //ÓÎÏ·ÔÝÍ£
 			}
 			else if (ch == 98) {
 				read();
-				drawtext(_T("¶Áµµ³É¹¦"), &a17, DT_TOP | DT_VCENTER | DT_SINGLELINE);
+				drawtext(_T("è¯»æ¡£æˆåŠŸ"), &a17, DT_TOP | DT_VCENTER | DT_SINGLELINE);
 			}
 			else if (ch == 27) {
 				remove("test.txt");
-				drawtext(_T("´æµµ³É¹¦"), &a17, DT_TOP | DT_VCENTER | DT_SINGLELINE);
+				drawtext(_T("å­˜æ¡£æˆåŠŸ"), &a17, DT_TOP | DT_VCENTER | DT_SINGLELINE);
 				maptest(0);
 				maptest(1);
 				bigtest();
@@ -459,13 +459,13 @@ void gamepause() {                                //ÓÎÏ·ÔÝÍ£
 			}
 		}
 		drawbk();
-		FlushBatchDraw();			//½«»º³åÊä³öµ½ÆÁÄ»
+		FlushBatchDraw();			//å°†ç¼“å†²è¾“å‡ºåˆ°å±å¹•
 	}
 }
 /// //////////////////////////////////////////////////////////////////////////
 void draw(int pos, RECT rct, DWORD* pBufImg, DWORD* pBuf) {
 	clock_t t = clock();
-	float y = (float)pos;	// µ±Ç°ÎÄ×ÖÏñËØÐÐÓ³ÉäÔÚÆÁÄ»ÉÏµÄ×ø±ê
+	float y = (float)pos;	// å½“å‰æ–‡å­—åƒç´ è¡Œæ˜ å°„åœ¨å±å¹•ä¸Šçš„åæ ‡
 	for (int i = 0; i < (int)rct.bottom; i++)
 	{
 		y++;
@@ -482,7 +482,7 @@ void draw(int pos, RECT rct, DWORD* pBufImg, DWORD* pBuf) {
 				pBuf[(int)y * px + (int)((px - (int)(rct.right * (float)px / rct.right)) / 2 + (float)px / rct.right * j)] = RGB(200, 200, 200);
 		}
 	}
-	// Ö¡ÂÊ¾ùºâ
+	// å¸§çŽ‡å‡è¡¡
 	int delay = 1000 / 24 - (clock() - t);
 	if (delay > 0)
 	{
@@ -506,7 +506,7 @@ void gameend() {
 		DWORD* pBuf = GetImageBuffer();
 		BeginBatchDraw();
 
-		// Í¼Æ¬Êä³öÆ«ÒÆ
+		// å›¾ç‰‡è¾“å‡ºåç§»
 		for (int pos = py; pos > -rct.bottom; pos -= 2)
 		{
 			cleardevice();
@@ -518,19 +518,19 @@ void gameend() {
 ///////////////////////////////////////////////////////////////////////////////
 void gameend2() {
 	if (HERO.HP <= 0) {
-		// ´°¿Ú¿í¸ß
+		// çª—å£å®½é«˜
 		int nWindowWidth = 1497;
 		int nWindowHeight = 720;
 
-		int font_h = 200;					// ÎÄ×Ö¸ß
-		int font_w = 20;					// ÎÄ×Ö¿í
-		short nStartLightness = 255;		// ³õÊ¼ÁÁ¶È
-		short nEndLightness = 60;			// ×îÖÕÁÁ¶È
-		float fEndWidthRatio = (float)0.65;	// ¿í¶ÈËõ·Å±ÈÀý
-		float fEndHeightRatio = (float)0.3;	// ¸ß¶ÈËõ·Å±ÈÀý
+		int font_h = 200;					// æ–‡å­—é«˜
+		int font_w = 20;					// æ–‡å­—å®½
+		short nStartLightness = 255;		// åˆå§‹äº®åº¦
+		short nEndLightness = 60;			// æœ€ç»ˆäº®åº¦
+		float fEndWidthRatio = (float)0.65;	// å®½åº¦ç¼©æ”¾æ¯”ä¾‹
+		float fEndHeightRatio = (float)0.3;	// é«˜åº¦ç¼©æ”¾æ¯”ä¾‹
 
-		int fps = 24;		// Ö¡ÂÊ
-		int nAmount = 2;	// ÎÄ×Öµ¥´ÎÎ»ÒÆ
+		int fps = 24;		// å¸§çŽ‡
+		int nAmount = 2;	// æ–‡å­—å•æ¬¡ä½ç§»
 
 
 		RECT rct = { 0 };
@@ -545,7 +545,7 @@ void gameend2() {
 		SetWorkingImage();
 		DWORD* pBuf = GetImageBuffer();
 
-		// ½«ÎÄ±¾¿í¶ÈÑ¹ËõÎª´°¿Ú¿í¶È
+		// å°†æ–‡æœ¬å®½åº¦åŽ‹ç¼©ä¸ºçª—å£å®½åº¦
 		float fWindowWidthRatio = (float)nWindowWidth / rct.right;
 
 		BeginBatchDraw();
@@ -556,13 +556,13 @@ void gameend2() {
 		float f_kWidth = (1 - fEndWidthRatio) / nWindowHeight;
 		float f_kHeight = (1 - fEndHeightRatio) / nWindowHeight;
 
-		// Í¼Æ¬Êä³öÆ«ÒÆ
+		// å›¾ç‰‡è¾“å‡ºåç§»
 		for (int pos = nWindowHeight; pos > -rct.bottom; pos -= nAmount)
 		{
 			t = clock();
 			cleardevice();
 
-			float y = (float)pos;	// µ±Ç°ÎÄ×ÖÏñËØÐÐÓ³ÉäÔÚÆÁÄ»ÉÏµÄ×ø±ê
+			float y = (float)pos;	// å½“å‰æ–‡å­—åƒç´ è¡Œæ˜ å°„åœ¨å±å¹•ä¸Šçš„åæ ‡
 			for (int i = 0; i < (int)(rct.bottom /** fWindowWidthRatio*/); i++)
 			{
 				y += f_kHeight * y + fEndHeightRatio;
@@ -594,7 +594,7 @@ void gameend2() {
 
 			FlushBatchDraw();
 
-			// Ö¡ÂÊ¾ùºâ
+			// å¸§çŽ‡å‡è¡¡
 			int delay = 1000 / fps - (clock() - t);
 			if (delay > 0)
 			{
@@ -613,12 +613,12 @@ void information() {
 	RECT a31 = { WIDTH + 220 ,10 + 4 * WEN_DISTANT,P_WIDTH,50 + 6 * WEN_DISTANT };
 	RECT a4 = { WIDTH + 3 ,10 + 6 * WEN_DISTANT,P_WIDTH,50 + 8 * WEN_DISTANT };
 	RECT a5 = { WIDTH + 3 ,HEIGHT - 30,P_WIDTH,HEIGHT - 10 };
-	drawtext(_T("HERO_LEVEL£º"), &a1, DT_TOP | DT_SINGLELINE | DT_LEFT);
-	drawtext(_T("HERO_HP£º"), &a2, DT_TOP | DT_SINGLELINE | DT_LEFT);
-	drawtext(_T("HERO_power£º"), &a3, DT_TOP | DT_SINGLELINE | DT_LEFT);
-	drawtext(_T("HERO_skill£º"), &a31, DT_TOP | DT_SINGLELINE | DT_LEFT);
-	drawtext(_T("HERO_key£º"), &a4, DT_TOP | DT_SINGLELINE | DT_LEFT);
-	drawtext(_T("<<°´¿Õ¸ñ¼ü²é¿´¸ü¶à>>"), &a5, DT_TOP | DT_SINGLELINE | DT_CENTER);
+	drawtext(_T("HERO_LEVELï¼š"), &a1, DT_TOP | DT_SINGLELINE | DT_LEFT);
+	drawtext(_T("HERO_HPï¼š"), &a2, DT_TOP | DT_SINGLELINE | DT_LEFT);
+	drawtext(_T("HERO_powerï¼š"), &a3, DT_TOP | DT_SINGLELINE | DT_LEFT);
+	drawtext(_T("HERO_skillï¼š"), &a31, DT_TOP | DT_SINGLELINE | DT_LEFT);
+	drawtext(_T("HERO_keyï¼š"), &a4, DT_TOP | DT_SINGLELINE | DT_LEFT);
+	drawtext(_T("<<æŒ‰ç©ºæ ¼é”®æŸ¥çœ‹æ›´å¤š>>"), &a5, DT_TOP | DT_SINGLELINE | DT_CENTER);
 
 	TCHAR s1[10] = { 0 };
 	_stprintf_s(s1, _T("%d"), HERO.level);
@@ -644,25 +644,25 @@ void information() {
 	settextcolor(GREEN);
 	setbkmode(TRANSPARENT);
 	RECT b1 = { WIDTH + 1 * WEN_DISTANT,10 + 8 * WEN_DISTANT,WIDTH + 3 + 4 * WEN_DISTANT,10 + 10 * WEN_DISTANT };
-	drawtext(_T("ÉúÃü»Ö¸´"), &b1, DT_TOP | DT_SINGLELINE | DT_LEFT);
+	drawtext(_T("ç”Ÿå‘½æ¢å¤"), &b1, DT_TOP | DT_SINGLELINE | DT_LEFT);
 	RECT b2 = { WIDTH + 6 * WEN_DISTANT,10 + 8 * WEN_DISTANT,WIDTH + 3 + 9 * WEN_DISTANT,10 + 10 * WEN_DISTANT };
-	drawtext(_T("ÀØÉäÇ¹"), &b2, DT_TOP | DT_SINGLELINE | DT_LEFT);
+	drawtext(_T("é•­å°„æžª"), &b2, DT_TOP | DT_SINGLELINE | DT_LEFT);
 	RECT b3 = { WIDTH + 1 * WEN_DISTANT,10 + 10 * WEN_DISTANT,WIDTH + 3 + 4 * WEN_DISTANT,10 + 12 * WEN_DISTANT };
-	drawtext(_T("´©Ô½ÉÁÏÖ"), &b3, DT_TOP | DT_SINGLELINE | DT_LEFT);
+	drawtext(_T("ç©¿è¶Šé—ªçŽ°"), &b3, DT_TOP | DT_SINGLELINE | DT_LEFT);
 	RECT b4 = { WIDTH + 6 * WEN_DISTANT,10 + 10 * WEN_DISTANT,WIDTH + 3 + 9 * WEN_DISTANT,10 + 12 * WEN_DISTANT };
-	drawtext(_T("ÃâÒßÉËº¦"), &b4, DT_TOP | DT_SINGLELINE | DT_LEFT);
+	drawtext(_T("å…ç–«ä¼¤å®³"), &b4, DT_TOP | DT_SINGLELINE | DT_LEFT);
 
 	setfillcolor(TEXT_COLOR);
-	fillrectangle(WIDTH + 3, 8 + WEN_DISTANT, P_WIDTH - 10, 32 + WEN_DISTANT);                            //LEVEL½ø¶ÈÌõ
-	fillrectangle(WIDTH + 3, 8 + 3 * WEN_DISTANT, P_WIDTH - 10, 32 + 3 * WEN_DISTANT);                    //HP½ø¶ÈÌõ
-	fillrectangle(WIDTH + 3, 8 + 5 * WEN_DISTANT, P_WIDTH - 10, 32 + 5 * WEN_DISTANT);                    //power½ø¶ÈÌõ
-	//	fillrectangle(WIDTH + 4, HEIGHT - 8 - 9 * WEN_DISTANT, P_WIDTH - 10, HEIGHT - 8);                  //Ô­µ×¿ò
+	fillrectangle(WIDTH + 3, 8 + WEN_DISTANT, P_WIDTH - 10, 32 + WEN_DISTANT);                            //LEVELè¿›åº¦æ¡
+	fillrectangle(WIDTH + 3, 8 + 3 * WEN_DISTANT, P_WIDTH - 10, 32 + 3 * WEN_DISTANT);                    //HPè¿›åº¦æ¡
+	fillrectangle(WIDTH + 3, 8 + 5 * WEN_DISTANT, P_WIDTH - 10, 32 + 5 * WEN_DISTANT);                    //powerè¿›åº¦æ¡
+	//	fillrectangle(WIDTH + 4, HEIGHT - 8 - 9 * WEN_DISTANT, P_WIDTH - 10, HEIGHT - 8);                  //åŽŸåº•æ¡†
 
 	setfillcolor(BLACK);
-	fillrectangle(WIDTH + 3 + WEN_P, 8 + WEN_DISTANT + WEN_P, P_WIDTH - 10 - WEN_P, 32 + WEN_DISTANT - WEN_P);             //LEVEL½ø¶ÈÌõºÚÉ«ÕÚÂë
-	fillrectangle(WIDTH + 3 + WEN_P, 8 + 3 * WEN_DISTANT + WEN_P, P_WIDTH - 10 - WEN_P, 32 + 3 * WEN_DISTANT - WEN_P);           //HP½ø¶ÈÌõºÚÉ«ÕÚÂë
-	fillrectangle(WIDTH + 3 + WEN_P, 8 + 5 * WEN_DISTANT + WEN_P, P_WIDTH - 10 - WEN_P, 32 + 5 * WEN_DISTANT - WEN_P);           //power½ø¶ÈÌõºÚÉ«ÕÚÂë
-	//	fillrectangle(WIDTH + 4 + WEN_P, HEIGHT - 8 - 9 * WEN_DISTANT + WEN_P, P_WIDTH - 10 - WEN_P, HEIGHT - 8 - WEN_P);       //Ô­µ×¿òºÚÉ«ÕÚÂë
+	fillrectangle(WIDTH + 3 + WEN_P, 8 + WEN_DISTANT + WEN_P, P_WIDTH - 10 - WEN_P, 32 + WEN_DISTANT - WEN_P);             //LEVELè¿›åº¦æ¡é»‘è‰²é®ç 
+	fillrectangle(WIDTH + 3 + WEN_P, 8 + 3 * WEN_DISTANT + WEN_P, P_WIDTH - 10 - WEN_P, 32 + 3 * WEN_DISTANT - WEN_P);           //HPè¿›åº¦æ¡é»‘è‰²é®ç 
+	fillrectangle(WIDTH + 3 + WEN_P, 8 + 5 * WEN_DISTANT + WEN_P, P_WIDTH - 10 - WEN_P, 32 + 5 * WEN_DISTANT - WEN_P);           //powerè¿›åº¦æ¡é»‘è‰²é®ç 
+	//	fillrectangle(WIDTH + 4 + WEN_P, HEIGHT - 8 - 9 * WEN_DISTANT + WEN_P, P_WIDTH - 10 - WEN_P, HEIGHT - 8 - WEN_P);       //åŽŸåº•æ¡†é»‘è‰²é®ç 
 	setlinecolor(WEN_COLOR);
 	setfillcolor(WEN_COLOR);
 	fillrectangle(WIDTH + 3 + WEN_P, 8 + WEN_DISTANT + WEN_P, WIDTH + 3 + WEN_P + 4 * (HERO.EXP % 100), 32 + WEN_DISTANT - WEN_P);
@@ -684,7 +684,7 @@ void informationupdate() {
 	else if (HERO.j > 1)HERO.j--;
 }
 //////////////////////////////////////////////////////////////////////////////
-void drawpixal(int x, int y, COLORREF COLOR, float xy, int s) {             //»æÖÆ·½¸ñ
+void drawpixal(int x, int y, COLORREF COLOR, float xy, int s) {             //ç»˜åˆ¶æ–¹æ ¼
 	float xy2 = xy / 2;
 	setfillcolor(COLOR);
 	setlinecolor(COLOR);
@@ -695,7 +695,7 @@ void drawpixal(int x, int y, COLORREF COLOR, float xy, int s) {             //»æ
 			BLOCK_XY + y * BLOCK_XY + y * BLOCK_JJ - xy2 + py_y + CAMERA_Y);
 }
 
-void drawcircle(int x, int y, COLORREF COLOR, float xy, int s) {      //»æÖÆÔ²
+void drawcircle(int x, int y, COLORREF COLOR, float xy, int s) {      //ç»˜åˆ¶åœ†
 	float xy2 = xy / 2;
 	setfillcolor(COLOR);
 	setlinecolor(COLOR);
@@ -704,7 +704,7 @@ void drawcircle(int x, int y, COLORREF COLOR, float xy, int s) {      //»æÖÆÔ²
 			y * (BLOCK_XY + BLOCK_JJ) + xy2 + py_y + CAMERA_Y + BLOCK_XY / 2, 4);
 }
 
-void drawpie(int x, int y, COLORREF COLOR, float xy, int s) {                        //»­ÉÈÐÎ
+void drawpie(int x, int y, COLORREF COLOR, float xy, int s) {                        //ç”»æ‰‡å½¢
 	float xy2 = xy / 2;
 	setfillcolor(COLOR);
 	setlinecolor(COLOR);
@@ -751,7 +751,7 @@ void drawjpz(int x, int y, int x1, int x2, int i) {
 	if (i == 3) drawtext(_T("D"), &a, DT_TOP | DT_LEFT);
 	if (i == 4) drawtext(_T("Esc"), &a, DT_TOP | DT_LEFT);
 	if (i == 5) drawtext(_T("B"), &a, DT_TOP | DT_LEFT);
-	if (i == 6) drawtext(_T("¿Õ¸ñ"), &a, DT_TOP | DT_LEFT);
+	if (i == 6) drawtext(_T("ç©ºæ ¼"), &a, DT_TOP | DT_LEFT);
 }
 
 void drawarr(int i,int j) {
@@ -803,15 +803,15 @@ void buildstair(int x, int y, COLORREF COLOR, int p) {
 }
 /// ////////////////////////////////////////////////////////
 struct door {
-	int x[20] = { 19,43,58,2,23,52,14,38,43,59, 8,28,43,43,54,23,23,58, 2,23 };                                            //ÃÅµÄµØÍ¼×ø±êxºÍy
+	int x[20] = { 19,43,58,2,23,52,14,38,43,59, 8,28,43,43,54,23,23,58, 2,23 };                                            //é—¨çš„åœ°å›¾åæ ‡xå’Œy
 	int y[20] = { 2, 2, 2,8, 7, 8,19,19,17,19,23,23,23,38,38,16,22,23,28,34 };
-	int xx[20] = { 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 };                                 //ÃÅµÄ¿ªÆôÓë·ñ  1Î´¿ªÆô 0ÒÑ¿ªÆô
-	int sxzy[20] = { 1,1,1,0,0,0,0,0,1,0,1,1,1,1,1,0,0,1,0,0 };                               //ÃÅµÄ·ÅÖÃÐÎÌ¬ 1ÊÇÉÏÏÂ£¬0ÊÇ×óÓÒ
+	int xx[20] = { 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 };                                 //é—¨çš„å¼€å¯ä¸Žå¦  1æœªå¼€å¯ 0å·²å¼€å¯
+	int sxzy[20] = { 1,1,1,0,0,0,0,0,1,0,1,1,1,1,1,0,0,1,0,0 };                               //é—¨çš„æ”¾ç½®å½¢æ€ 1æ˜¯ä¸Šä¸‹ï¼Œ0æ˜¯å·¦å³
 }DOOR;
 
-struct dooropen {                                                              //ÃÅ¹Ø±ÕÊ± ÃÅÁ£×Ó
-	int n[20] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };            //Ã¿¸öÃÅÁ£×ÓÐèÒªÒÆ¶¯µÄ¾àÀë
-	int ting[20] = { 0 };                                                       //Èç¹ûting=0 ÔòÃÅÁ£×ÓÒ»Ö±ÍùºóÍË
+struct dooropen {                                                              //é—¨å…³é—­æ—¶ é—¨ç²’å­
+	int n[20] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };            //æ¯ä¸ªé—¨ç²’å­éœ€è¦ç§»åŠ¨çš„è·ç¦»
+	int ting[20] = { 0 };                                                       //å¦‚æžœting=0 åˆ™é—¨ç²’å­ä¸€ç›´å¾€åŽé€€
 }DOOROPEN[20];
 
 void doortest() {
@@ -825,12 +825,12 @@ void doortest() {
 		}
 }
 
-void initdooropen(int i) {   //ÖØÖÃÃÅÁ£×ÓµÄn
+void initdooropen(int i) {   //é‡ç½®é—¨ç²’å­çš„n
 	for (int n = 0; n < 20; n++)
 		DOOROPEN[i].n[n] = n + 1;
 }
 
-void kdoor(int x, int y, int sxzy) {                                                             //Ç°Á½¸ök£¨£© ÓÃÀ´¼ÇÂ¼ÃÅ×ø±ê2   ºóÁ½¸ök£¨£© ÓÃÀ´¼ÇÂ¼ÃÅÁ½²à¸¨ÖúÇ½µÄ×ø±ê1
+void kdoor(int x, int y, int sxzy) {                                                             //å‰ä¸¤ä¸ªkï¼ˆï¼‰ ç”¨æ¥è®°å½•é—¨åæ ‡2   åŽä¸¤ä¸ªkï¼ˆï¼‰ ç”¨æ¥è®°å½•é—¨ä¸¤ä¾§è¾…åŠ©å¢™çš„åæ ‡1
 	if (sxzy) k(x, y, 1, 0), k(x, y + 1, 1, 0),
 		k(x, y - 1, 0, 0), k(x, y + 2, 0, 0),
 		k(x - 1, y - 1, 0, 0), k(x - 1, y + 2, 0, 0),
@@ -841,7 +841,7 @@ void kdoor(int x, int y, int sxzy) {                                            
 		k(x - 1, y + 1, 0, 0), k(x + 2, y + 1, 0, 0);
 }
 
-void initdoor() {                         //½«ÃÅ×ø±ê¶¨Î»ÔÚKÊý×éÉÏ
+void initdoor() {                         //å°†é—¨åæ ‡å®šä½åœ¨Kæ•°ç»„ä¸Š
 	for (int i = 0; i < 20; i++) {
 		kdoor(DOOR.x[i], DOOR.y[i], DOOR.sxzy[i]);
 	}
@@ -855,7 +855,7 @@ void initstair() {
 
 }
 
-void antidoor(int x, int y) {                                        //ÊäÈë´ó×ø±êxºÍy  ½«¶ÔÓ¦¶þÎ¬Êý×éÄÚÃÅµÄ×ø±ê2ÖØÖÃÎª0
+void antidoor(int x, int y) {                                        //è¾“å…¥å¤§åæ ‡xå’Œy  å°†å¯¹åº”äºŒç»´æ•°ç»„å†…é—¨çš„åæ ‡2é‡ç½®ä¸º0
 	if (K[x - 1][y] == 2) x = x - 1;
 	else if (K[x][y - 1] == 2) y = y - 1;
 	for (int i = 0; i < 20; i++) {
@@ -869,7 +869,7 @@ void antidoor(int x, int y) {                                        //ÊäÈë´ó×ø±
 	}
 }
 
-void eachdoor(int x, int y, COLORREF COLOR, COLORREF COLOR1, int p, int sxzy, int n) {          //»æÖÆµ¥¸öÃÅ  xÎª´ó×ø±êX yÎª´ó×ø±êY pÎªÁ½²àÃÅµÄ¿ÕÏ¶  nÎª¹ØÃÅÊ±ÃÅºóÍËµÄÆµÂÊ
+void eachdoor(int x, int y, COLORREF COLOR, COLORREF COLOR1, int p, int sxzy, int n) {          //ç»˜åˆ¶å•ä¸ªé—¨  xä¸ºå¤§åæ ‡X yä¸ºå¤§åæ ‡Y pä¸ºä¸¤ä¾§é—¨çš„ç©ºéš™  nä¸ºå…³é—¨æ—¶é—¨åŽé€€çš„é¢‘çŽ‡
 
 	int ax = py_x + CAMERA_X;
 	int ay = py_y + CAMERA_Y;
@@ -881,13 +881,13 @@ void eachdoor(int x, int y, COLORREF COLOR, COLORREF COLOR1, int p, int sxzy, in
 	int s = 0;
 	setfillcolor(COLOR);
 	setlinecolor(COLOR);
-	fillrectangle(x * Band + ax + b1 * p + n * b2,     //£¨Ð¡·½¸ñ³¤¶È+¼ä¸ô£©*x ÔÙ¼õÈ¥Á½²àÃÅµÄ¿ÕÏ¶p     
+	fillrectangle(x * Band + ax + b1 * p + n * b2,     //ï¼ˆå°æ–¹æ ¼é•¿åº¦+é—´éš”ï¼‰*x å†å‡åŽ»ä¸¤ä¾§é—¨çš„ç©ºéš™p     
 		y * Band + ay + b2 * p + n * b1,
 		BLOCK_XY - 14 * b2 + x * Band + ax - b1 * p + n * b2,
 		BLOCK_XY - 14 * b1 + y * Band + ay - b2 * p + n * b1);
 	setfillcolor(COLOR1);
 	setlinecolor(COLOR1);
-	fillrectangle(x * Band + ax + b1 * (p + 2) + n * b2,     //£¨Ð¡·½¸ñ³¤¶È+¼ä¸ô£©*x ÔÙ¼õÈ¥Á½²àÃÅµÄ¿ÕÏ¶p     
+	fillrectangle(x * Band + ax + b1 * (p + 2) + n * b2,     //ï¼ˆå°æ–¹æ ¼é•¿åº¦+é—´éš”ï¼‰*x å†å‡åŽ»ä¸¤ä¾§é—¨çš„ç©ºéš™p     
 		y * Band + ay + b2 * (p + 2) + n * b1,
 		BLOCK_XY - 14 * b2 + x * Band + ax - b1 * (p + 2) + n * b2,
 		BLOCK_XY - 14 * b1 + y * Band + ay - b2 * (p + 2) + n * b1);
@@ -896,7 +896,7 @@ void eachdoor(int x, int y, COLORREF COLOR, COLORREF COLOR1, int p, int sxzy, in
 void drawdoor() {
 	for (int i = 0; i < 20; i++) {
 		if (DOOR.xx[i] == 1)
-			for (int n = 1; n < 30; n++) {                                       //Ñ­»·´òÓ¡ËùÓÐµÄÃÅ
+			for (int n = 1; n < 30; n++) {                                       //å¾ªçŽ¯æ‰“å°æ‰€æœ‰çš„é—¨
 				eachdoor(DOOR.x[i], DOOR.y[i], DOOR_COLOR1, DOOR_COLOR2, 3, DOOR.sxzy[i], n);
 			}
 		else if (DOOR.xx[i] == 0) {
@@ -910,31 +910,31 @@ void drawdoor() {
 	}
 }
 /// /////////////////////////////////////////////////////////////////
-void buildwall(int x, int y, COLORREF COLOR, int p) {                     //½¨Ôìµ¥ÃæÇ½
+void buildwall(int x, int y, COLORREF COLOR, int p) {                     //å»ºé€ å•é¢å¢™
 	int py_x = PYI_X / 2;
 	int py_y = PYI_Y / 2;
 	setfillcolor(COLOR);
 	setlinecolor(COLOR);
-	fillrectangle(x * BLOCK_XY + x * BLOCK_JJ + py_x + CAMERA_X + p,     //£¨Ð¡·½¸ñ³¤¶È+¼ä¸ô£©*x ÔÙ¼õÈ¥Ç½±Ú¼äµÄ¿ÕÏ¶p
+	fillrectangle(x * BLOCK_XY + x * BLOCK_JJ + py_x + CAMERA_X + p,     //ï¼ˆå°æ–¹æ ¼é•¿åº¦+é—´éš”ï¼‰*x å†å‡åŽ»å¢™å£é—´çš„ç©ºéš™p
 		y * BLOCK_XY + y * BLOCK_JJ + py_y + CAMERA_Y + p,
 		BLOCK_XY + x * BLOCK_XY + x * BLOCK_JJ + py_x + CAMERA_X - p,
 		BLOCK_XY + y * BLOCK_XY + y * BLOCK_JJ + py_y + CAMERA_Y - p);
 }
 
 
-void initwall(int a, int b) {                                                     //´òÓ¡µØÍ¼µÄ×©¿é
+void initwall(int a, int b) {                                                     //æ‰“å°åœ°å›¾çš„ç –å—
 
 	for (int i = 0; i < BLOCK_WIDTH; i++) 	k(i, 0, 0, 0);
 	for (int i = 0; i < BLOCK_WIDTH; i++) 	k(i, BLOCK_HEIGHT - 1, 0, 0);
 	for (int i = 0; i < BLOCK_HEIGHT; i++) 	k(0, i, 0, 0);
 	for (int i = 0; i < BLOCK_HEIGHT; i++) 	k(BLOCK_WIDTH - 1, i, 0, 0);
-	///////////////////////////ÉÏÃæÊÇ´ó·½¿ò///////////////
+	///////////////////////////ä¸Šé¢æ˜¯å¤§æ–¹æ¡†///////////////
 	for (int i = 1; i < BLOCK_WIDTH - 1; i += 3)
 		for (int j = 1; j < BLOCK_HEIGHT; j += 3) 	k(i, j, 0, 0);
 
 	for (int i = 1; i < BLOCK_WIDTH - 1; i += 5)
 		for (int j = 1; j < BLOCK_HEIGHT; j += 5) {
-			k(i, j, 0, 0);          //8¸öËæ»ú·½Ïò  ¿´b
+			k(i, j, 0, 0);          //8ä¸ªéšæœºæ–¹å‘  çœ‹b
 			switch (b) {
 			case 0: k(i + 1, j, 0, 0); break;
 			case 1: k(i - 1, j, 0, 0); break;
@@ -948,13 +948,13 @@ void initwall(int a, int b) {                                                   
 		}
 	for (int i = 1; i < BLOCK_WIDTH - 1; i += 6)
 		for (int j = 1; j < BLOCK_HEIGHT; j += 6)  k(i, j, 0, 0);
-	//ÔÚµØÍ¼ÉÏ´òÓ¡³ö×©¿éµãÕó
+	//åœ¨åœ°å›¾ä¸Šæ‰“å°å‡ºç –å—ç‚¹é˜µ
 	for (int i = 1; i < BLOCK_WIDTH - 1; i += 7)
 		for (int j = 1; j < BLOCK_HEIGHT; j += 7) 	k(i, j, 0, 0);
 
 	for (int i = 1; i < BLOCK_WIDTH - 1; i += 4)
 		for (int j = 1; j < BLOCK_HEIGHT; j += 4) {
-			k(i, j, 0, 0);                  //ËÄ¸öËæ»úµã·½Ïò ¿´a
+			k(i, j, 0, 0);                  //å››ä¸ªéšæœºç‚¹æ–¹å‘ çœ‹a
 			switch (a) {
 			case 0: k(i + 1, j, 0, 0); break;
 			case 1: k(i - 1, j, 0, 0); break;
@@ -965,7 +965,7 @@ void initwall(int a, int b) {                                                   
 	for (int n = 0; n < 20; n++) kdoor(DOOR.x[n], DOOR.y[n], DOOR.sxzy[n]);
 
 }
-void drawwall() {                                                     //´òÓ¡µØÍ¼µÄ×©¿é
+void drawwall() {                                                     //æ‰“å°åœ°å›¾çš„ç –å—
 	for (int i = 0; i < BLOCK_WIDTH; i++)
 		for (int j = 0; j < BLOCK_HEIGHT; j++) {
 			if (K[i][j] == 1) {
@@ -976,17 +976,17 @@ void drawwall() {                                                     //´òÓ¡µØÍ¼
 		}
 }
 ///////////////////////////////////////////////////////////////
-void initwallx(int c, int d, int e) {                                                     //´òÓ¡µØÍ¼µÄ×©¿é
+void initwallx(int c, int d, int e) {                                                     //æ‰“å°åœ°å›¾çš„ç –å—
 
 	for (int i = 0; i < BLOCK_WIDTH; i++) 	kx(i, 0, 0, 0);
 	for (int i = 0; i < BLOCK_WIDTH; i++) 	kx(i, BLOCK_HEIGHT - 1, 0, 0);
 	for (int i = 0; i < BLOCK_HEIGHT; i++) 	kx(0, i, 0, 0);
 	for (int i = 0; i < BLOCK_HEIGHT; i++) 	kx(BLOCK_WIDTH - 1, i, 0, 0);
-	///////////////////////////ÉÏÃæÊÇ´ó·½¿ò///////////////
+	///////////////////////////ä¸Šé¢æ˜¯å¤§æ–¹æ¡†///////////////
 	for (int i = 1; i < BLOCK_WIDTH - 1; i += 3)
 		for (int j = 1; j < BLOCK_HEIGHT; j += 3) {
 			k(i, j, 0, 0);
-			switch (d) {                                    //8¸öËæ»ú·½Ïò  ¿´b	
+			switch (d) {                                    //8ä¸ªéšæœºæ–¹å‘  çœ‹b	
 			case 0: kx(i + 1, j, 0, 0); break;
 			case 1: kx(i - 1, j, 0, 0); break;
 			case 2:kx(i, j + 1, 0, 0); break;
@@ -1004,13 +1004,13 @@ void initwallx(int c, int d, int e) {                                           
 		}
 	for (int i = 1; i < BLOCK_WIDTH - 1; i += 6)
 		for (int j = 1; j < BLOCK_HEIGHT; j += 6)  kx(i, j, 0, 0);
-	//ÔÚµØÍ¼ÉÏ´òÓ¡³ö×©¿éµãÕó
+	//åœ¨åœ°å›¾ä¸Šæ‰“å°å‡ºç –å—ç‚¹é˜µ
 	for (int i = 1; i < BLOCK_WIDTH - 1; i += 7)
 		for (int j = 1; j < BLOCK_HEIGHT; j += 7) 	kx(i, j, 0, 0);
 
 	for (int i = 1; i < BLOCK_WIDTH - 1; i += 4)
 		for (int j = 1; j < BLOCK_HEIGHT; j += 4) {
-			kx(i, j, 0, 0);                  //ËÄ¸öËæ»úµã·½Ïò ¿´a
+			kx(i, j, 0, 0);                  //å››ä¸ªéšæœºç‚¹æ–¹å‘ çœ‹a
 			switch (c) {
 			case 0: kx(i + 1, j, 0, 0); break;
 			case 1: kx(i - 1, j, 0, 0); break;
@@ -1020,7 +1020,7 @@ void initwallx(int c, int d, int e) {                                           
 		}
 	for (int i = 1; i < BLOCK_WIDTH - 1; i += 4)
 		for (int j = 1; j < BLOCK_HEIGHT; j += 4) {
-			kx(i + 1, j - 2, 0, 0);                  //ËÄ¸öËæ»úµã·½Ïò ¿´a
+			kx(i + 1, j - 2, 0, 0);                  //å››ä¸ªéšæœºç‚¹æ–¹å‘ çœ‹a
 			switch (e) {
 			case 0: kx(i + 1, j + 1, 0, 0); break;
 			case 1: kx(i - 1, j - 1, 0, 0); break;
@@ -1032,7 +1032,7 @@ void initwallx(int c, int d, int e) {                                           
 
 }
 /////////////////////////////////////////////////////////////
-void drawwallx() {                                                     //´òÓ¡µØÍ¼µÄ×©¿é
+void drawwallx() {                                                     //æ‰“å°åœ°å›¾çš„ç –å—
 	for (int i = 0; i < BLOCK_WIDTH; i++)
 		for (int j = 0; j < BLOCK_HEIGHT; j++) {
 			if (K1[i][j] == 1) {
@@ -1048,9 +1048,9 @@ void initwallx1() {
 	for (int i = 0; i < BLOCK_WIDTH; i++) 	kx1(i, BLOCK_HEIGHT - 1, 0, 0);
 	for (int i = 0; i < BLOCK_HEIGHT; i++) 	kx1(0, i, 0, 0);
 	for (int i = 0; i < BLOCK_HEIGHT; i++) 	kx1(BLOCK_WIDTH - 1, i, 0, 0);
-	///////////////////////////ÉÏÃæÊÇ´ó·½¿ò///////////////
+	///////////////////////////ä¸Šé¢æ˜¯å¤§æ–¹æ¡†///////////////
 }
-void drawwallx1() {                                                     //´òÓ¡µØÍ¼µÄ×©¿é
+void drawwallx1() {                                                     //æ‰“å°åœ°å›¾çš„ç –å—
 	for (int i = 0; i < BLOCK_WIDTH; i++)
 		for (int j = 0; j < BLOCK_HEIGHT; j++) {
 			if (K2[i][j] == 1) {
@@ -1170,15 +1170,15 @@ void drawkey() {
 }
 ////////////////////////////////////////////////////
 struct lizi {
-	float x = 0, y = 0;                        //Á£×ÓÎ»ÖÃ
-	int sjx[6] = { -3, -3, 3, -3, -3, 3 };     //Á£×ÓÈý½ÇÐÎµÄÈýµã×ø±êÑùÊ½
-	float dx = 0, dy = 0;                              //Á£×ÓËÙ¶È
-	float jd = 0;                              //Á£×Ó½Ç¶È
-	float djd = 0;                             //Á£×ÓÐý×ªµÄ½ÇËÙ¶È
-	COLORREF RGB;                              //Á£×ÓÑÕÉ«
+	float x = 0, y = 0;                        //ç²’å­ä½ç½®
+	int sjx[6] = { -3, -3, 3, -3, -3, 3 };     //ç²’å­ä¸‰è§’å½¢çš„ä¸‰ç‚¹åæ ‡æ ·å¼
+	float dx = 0, dy = 0;                              //ç²’å­é€Ÿåº¦
+	float jd = 0;                              //ç²’å­è§’åº¦
+	float djd = 0;                             //ç²’å­æ—‹è½¬çš„è§’é€Ÿåº¦
+	COLORREF RGB;                              //ç²’å­é¢œè‰²
 }Lizi[LIZINUM];
 
-void initlizi(int x, int y) {   //x,yÎªÒªÏÔÊ¾µÄÎ»ÖÃ
+void initlizi(int x, int y) {   //x,yä¸ºè¦æ˜¾ç¤ºçš„ä½ç½®
 	for (int i = 0; i < LIZINUM; i++) {
 		Lizi[i].x = rand() % BLOCK_XY + x;
 		Lizi[i].y = rand() % BLOCK_XY + y;
@@ -1256,8 +1256,8 @@ void initbig(int x) {
 
 }
 
-void randomway(int i, int x) {                  //bigÓöµ½Ç½±Ú×èµ²ºó¸Ä±äÔË¶¯·½Ïò
-	//iÎªBIGÐòºÅ  xÎª²»Í¬µØÍ¼µÄbig¹Ö  0ÎªÖ÷  1Îª¸±
+void randomway(int i, int x) {                  //bigé‡åˆ°å¢™å£é˜»æŒ¡åŽæ”¹å˜è¿åŠ¨æ–¹å‘
+	//iä¸ºBIGåºå·  xä¸ºä¸åŒåœ°å›¾çš„bigæ€ª  0ä¸ºä¸»  1ä¸ºå‰¯
 LOOP:
 	int ops = 0;
 	int bigdy = 0, bigdx = 0;
@@ -1286,7 +1286,7 @@ LOOP:
 
 }
 void intellbig(int i) {
-	int* p = &K[0][0], n = 0, m = 0;                                       //big×Ô¶¯µ¼º½²âÊÔÊ§°Ü  ÔÝ»º¼Æ»®
+	int* p = &K[0][0], n = 0, m = 0;                                       //bigè‡ªåŠ¨å¯¼èˆªæµ‹è¯•å¤±è´¥  æš‚ç¼“è®¡åˆ’
 	if (BIG[i].x == HERO.x) {
 		gamewindowshake();
 		int x;
@@ -1315,9 +1315,9 @@ void intellbig(int i) {
 	}
 }
 
-void initbigmove(int x) {  /////////µ±xÎª0 ´ú±íÖ÷ÊÀ½ç   xÎª1Ê± ´ú±í¸±ÊÀ½ç
+void initbigmove(int x) {  /////////å½“xä¸º0 ä»£è¡¨ä¸»ä¸–ç•Œ   xä¸º1æ—¶ ä»£è¡¨å‰¯ä¸–ç•Œ
 	int t1 = 0;
-	t1 == GetTickCount();		//»ñÈ¡µçÄÔ¿ª»úÊ±¼ä
+	t1 == GetTickCount();		//èŽ·å–ç”µè„‘å¼€æœºæ—¶é—´
 	int a = 0;
 	if (x == 0) {
 		for (int i = 0; i < BIGNUM; i++) {
@@ -1330,7 +1330,7 @@ void initbigmove(int x) {  /////////µ±xÎª0 ´ú±íÖ÷ÊÀ½ç   xÎª1Ê± ´ú±í¸±ÊÀ½ç
 				BIG[i].y = BIG[i].s * (BIG[i].y - BIG[i].dy);
 				randomway(i, 0);
 			}
-			if (K[BIG[i].x + BIG[i].dy][BIG[i].y + BIG[i].dx] != 1 || K[BIG[i].x + BIG[i].dy][BIG[i].y + BIG[i].dx] != 2 && K[BIG[i].x][BIG[i].y] != 1 || K[BIG[i].x][BIG[i].y] != 2) {                 //big±©×ß
+			if (K[BIG[i].x + BIG[i].dy][BIG[i].y + BIG[i].dx] != 1 || K[BIG[i].x + BIG[i].dy][BIG[i].y + BIG[i].dx] != 2 && K[BIG[i].x][BIG[i].y] != 1 || K[BIG[i].x][BIG[i].y] != 2) {                 //bigæš´èµ°
 				if (a % 2 == 0)
 					randomway(i, 0);
 			}
@@ -1398,8 +1398,8 @@ void heroreact(int x, int y, int z, int i) {
 			HERO.power += 5;
 			a = 1;
 		}
-		else if (HERO.x == x && HERO.y == y && z == 3) {                  //ÃÅµÄ¶þÎ¬ÖØÖÃÒÑÔÚantidoor£¨£©º¯ÊýÍê³É£¬´Ë´¦ÎÞÐè¶àÐ´
-			HERO.x = (HERO.x - HERO.dx);                                  //¿ªÃÅÊ±µÄÔ¿³×ÅÐ¶¨ÒÑ·ÅÖÃÔÚºÍÈâmove£¨£©º¯ÊýÄÚ£¬´Ë´¦ÎÞÐè¶àÐ´
+		else if (HERO.x == x && HERO.y == y && z == 3) {                  //é—¨çš„äºŒç»´é‡ç½®å·²åœ¨antidoorï¼ˆï¼‰å‡½æ•°å®Œæˆï¼Œæ­¤å¤„æ— éœ€å¤šå†™
+			HERO.x = (HERO.x - HERO.dx);                                  //å¼€é—¨æ—¶çš„é’¥åŒ™åˆ¤å®šå·²æ”¾ç½®åœ¨å’Œè‚‰moveï¼ˆï¼‰å‡½æ•°å†…ï¼Œæ­¤å¤„æ— éœ€å¤šå†™
 			HERO.y = (HERO.y - HERO.dy);
 			if (HERO.key > 0) {
 				a = 1;
@@ -1424,7 +1424,7 @@ void heroreact(int x, int y, int z, int i) {
 		}
 		if (a == 1)
 			switch (z) {
-			case 1:	BIG[i].s = 0; break;                //z=1 ¿ØÖÆbigµÄ´æÍö                          
+			case 1:	BIG[i].s = 0; break;                //z=1 æŽ§åˆ¶bigçš„å­˜äº¡                          
 			case 2:SMALL[i].s = 0; break;
 			case 3:DOOR.xx[i] = 0; break;
 			case 4:BLOOD[i].s = 0; break;
@@ -1465,7 +1465,7 @@ void heroreact(int x, int y, int z, int i) {
 		}
 		if (a == 1)
 			switch (z) {
-			case 1:	BIGX[i].s = 0; break;                //z=1 ¿ØÖÆbigµÄ´æÍö                          
+			case 1:	BIGX[i].s = 0; break;                //z=1 æŽ§åˆ¶bigçš„å­˜äº¡                          
 			case 2:SMALLX[i].s = 0; break;
 			case 3:DOOR.xx[i] = 0; break;
 			case 4:BLOODX[i].s = 0; break;
@@ -1500,13 +1500,13 @@ void heromove() {
 				break;
 			}
 		}break;
-		case 112:heroskill(); break;      //p¼ü
-		case 109:HERO.map = 1; break;      //m¼ü
-		case 110:HERO.map = 0; break;      //n¼ü
-		case 72:HERO.j--; break;     //¼¼ÄÜÉÏ
-		case 80:HERO.j++; break;     //¼¼ÄÜÏÂ
-		case 75:HERO.i--; break;     //¼¼ÄÜ×ó
-		case 77:HERO.i++; break;     //¼¼ÄÜÓÒ
+		case 112:heroskill(); break;      //pé”®
+		case 109:HERO.map = 1; break;      //mé”®
+		case 110:HERO.map = 0; break;      //né”®
+		case 72:HERO.j--; break;     //æŠ€èƒ½ä¸Š
+		case 80:HERO.j++; break;     //æŠ€èƒ½ä¸‹
+		case 75:HERO.i--; break;     //æŠ€èƒ½å·¦
+		case 77:HERO.i++; break;     //æŠ€èƒ½å³
 		default:break;
 		}
 		if (K[HERO.x][HERO.y] == 6&&HERO.map==0) { HERO.map = 1; HERO.x = 3; HERO.y = 2; }
@@ -1517,7 +1517,7 @@ void heromove() {
 			HERO.x = (HERO.x - HERO.dx);
 			HERO.y = (HERO.y - HERO.dy);
 		}
-		if (K[HERO.x][HERO.y] == 2) {                        //Ç°Ãæheroreact£¨£©º¯ÊýµÄÔ¿³×¿ªÃÅÏµÍ³·ÅÖÃµ½´Ë´¦
+		if (K[HERO.x][HERO.y] == 2) {                        //å‰é¢heroreactï¼ˆï¼‰å‡½æ•°çš„é’¥åŒ™å¼€é—¨ç³»ç»Ÿæ”¾ç½®åˆ°æ­¤å¤„
 			if (HERO.key > 0) {
 				antidoor(HERO.x, HERO.y);
 				HERO.key--;
@@ -1552,7 +1552,7 @@ void maptest(int x) {
 			}
 }
 ///////////////////////////////////////////////////////
-void read() {                           //¶ÁÈ¡´æµµ
+void read() {                           //è¯»å–å­˜æ¡£
 	ifstream ifs;
 	ifs.open("test.txt", ios::in);
 	_ASSERT(ifs.is_open());
@@ -1634,11 +1634,11 @@ void read() {                           //¶ÁÈ¡´æµµ
 /////////////////////////////////////////////////////
 #pragma comment( linker, "/subsystem:windows /entry:mainCRTStartup" )
 int main() {
-	srand((unsigned)time(NULL));	//Ëæ»úÊýÖÖ×Ó
-	initgraph(P_WIDTH, P_HEIGHT);		//´´½¨»æÍ¼´°¿Ú
-	BeginBatchDraw();				//¿ªÊ¼ÅúÁ¿»æÍ¼
+	srand((unsigned)time(NULL));	//éšæœºæ•°ç§å­
+	initgraph(P_WIDTH, P_HEIGHT);		//åˆ›å»ºç»˜å›¾çª—å£
+	BeginBatchDraw();				//å¼€å§‹æ‰¹é‡ç»˜å›¾
 	DWORD t1, t2;
-	t1 = t2 = GetTickCount();		//»ñÈ¡µçÄÔ¿ª»úÊ±¼ä
+	t1 = t2 = GetTickCount();		//èŽ·å–ç”µè„‘å¼€æœºæ—¶é—´
 	static int a = 0, b = 0, c = 0, d = 0;
 	a = rand() % 4;
 	b = rand() % 8;
@@ -1690,7 +1690,7 @@ int main() {
 		gamewindowshake();
 		drawlizi();
 
-		if (t2 - t1 > GAMETIME) {         //Ê¹ÓÎÏ··Ç¶ÂÈûÑÓÊ±
+		if (t2 - t1 > GAMETIME) {         //ä½¿æ¸¸æˆéžå µå¡žå»¶æ—¶
 
 			initbigmove(0);
 			initbigmove(1);
@@ -1701,7 +1701,7 @@ int main() {
 		informationupdate();
 		drawbk();
 
-		FlushBatchDraw();         //½«»º³åÊä³öµ½ÆÁÄ»;
+		FlushBatchDraw();         //å°†ç¼“å†²è¾“å‡ºåˆ°å±å¹•;
 		t2 = GetTickCount();
 		gameend2();
 	}
